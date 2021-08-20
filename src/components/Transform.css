@@ -1,0 +1,24 @@
+
+.meniaflex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.meniaflexHeading{
+    display: block;
+    text-align: center;
+}
+@media (max-width : 991px) {
+    .meniaflex{
+        flex-direction: column;
+    }
+    .searchheading{
+        margin-top: 5%;
+    }
+}
+@media (max-width : 600px) {
+    body{
+        text-align: center;
+    }
+}
