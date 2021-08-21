@@ -2,14 +2,8 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React, { useState } from 'react'
 import Alert from './components/Alert';
-import { Aboutus } from './components/Aboutus';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  
-} from "react-router-dom";
+
 
 
 
@@ -39,19 +33,9 @@ function App() {
 
   return (
     <>
-    <Router>
       <Navbar titleText = "Texto_Menia" mode ={mode} change={toggle} toggletext = {text}/> 
       <Alert mode ={mode} text = {alert}/>
-      <Switch>
-          <Route exact path="/about">
-            <Aboutus mode ={mode} change={toggle}  heading="Let's Know About Us"/>
-            
-          </Route>
-          <Route path="/">
-            <Textform boxheading="Enter Your Text Below To Analyse" mode = {mode} change={toggle}/>
-          </Route>
-      </Switch>
-      </Router>
+      <Textform boxheading="Enter Your Text Below To Analyse" mode = {mode} change={toggle}/>
     </>
   );
 }
