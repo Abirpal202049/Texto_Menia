@@ -30,6 +30,10 @@ export default function Textform(props) {
         let randtext = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, adipisci quas explicabo optio exercitationem earum ea incidunt, voluptas vitae consectetur pariatur facere ullam nisi distinctio eaque sequi odio mollitia omnis. Recusandae, eum eius. Aliquam quae ipsa velit dolorem. At harum ipsa nostrum consequatur optio non esse, itaque pariatur excepturi assumenda molestias facere quisquam tempore iusto fugit placeat ut maiores cum voluptates ratione, saepe odio perspiciatis. Optio placeat qui blanditiis architecto necessitatibus quis enim iure impedit molestiae labore repellendus minus doloremque sequi dolor, nihil vitae eum facilis soluta voluptates autem officia. Nemo illo ipsum earum magni veniam voluptatibus debitis dicta quae.`
         setText(randtext);
     }
+    const RemoveSpace = ()=>{
+        let ntext = Text.replace(/\s+/g, ' ').trim()
+        setText(ntext);
+    }
 
 
     const handelonchangeClick =(event) => {
@@ -40,11 +44,9 @@ export default function Textform(props) {
 
     // Search Funchinility
     const [searchtext, setSearchtext] = useState("")
-    const [decision, setDecision] = useState('Present')
+    const [decision, setDecision] = useState('')
     const handelonchangeClicksearch =(event) => {
-        // console.log("handelonchangeClick function is triggered now");
         setSearchtext(event.target.value);
-        // console.log(searchtext);
     }
     const searchup = () =>{
         let arr = Text.split(" ");
@@ -60,10 +62,10 @@ export default function Textform(props) {
             }
         }
         if (flag === -1) {
-            setDecision("Not Present");
+            setDecision("❌ The Word Is Not Present");
         }
         else{
-            setDecision(`Present At Position ${flag + 1}`);
+            setDecision(`✅ The Word "${searchtext}" Is Present At Position ${flag + 1}`);
         }
 
     }
@@ -84,6 +86,8 @@ export default function Textform(props) {
                 <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Clicktolowercase}>Convert To Lowercase</button>
                 <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Clicktoclear}>Clear Text</button>
                 <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={RandomText}>Generate Random Text</button>
+                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={RemoveSpace}>Remove Extra Space From Text</button>
+                {/* <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Capitalize}>Convert To Camel Case</button> */}
                 <hr />
 
                 <div className="container my-3 meniaflex">
@@ -92,7 +96,8 @@ export default function Textform(props) {
                     <div className="container my-3">
                         <h6>Charecter With Space : <span>{Text.length} Charecter</span> </h6>
                         <h6>Charecter : <span>{Text === '' ? "0" : (Text.length - ((Text === '' ? "0" :(Text.split(' ').length)) - 1))} Charecter</span> </h6>
-                        <h6>Words : <span>{Text === '' ? "0" :(Text.split(' ').length)} Words</span></h6>
+                        <h6>Words : <span>{Text === '' ? "0" :(Text.replace(/\s+/g, ' ').trim().split(' ').length)} Words</span></h6>
+                        {/* https://stackoverflow.com/questions/16974664/how-to-remove-the-extra-spaces-in-a-string */}
                     </div>
                     </div>
                     <div className="container">
@@ -103,7 +108,7 @@ export default function Textform(props) {
                             
                             <button type="button" onClick={searchup} className={`btn btn-${props.mode === 'dark' ? 'success' : 'dark'} mx-2 ${searchtext === "" ? "disabled" : ""}`} >Search</button>
                         </form>
-                        <h5>The word is {decision}</h5>
+                        <h5>{decision}</h5>
                     </div>
                 </div>
                 <hr />
