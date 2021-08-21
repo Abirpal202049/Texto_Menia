@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Texto_Menia/static/css/main.dd9b91a1.chunk.css",
+    "main.js": "/Texto_Menia/static/js/main.1a84ed29.chunk.js",
+    "main.js.map": "/Texto_Menia/static/js/main.1a84ed29.chunk.js.map",
+    "runtime-main.js": "/Texto_Menia/static/js/runtime-main.6cb41a06.js",
+    "runtime-main.js.map": "/Texto_Menia/static/js/runtime-main.6cb41a06.js.map",
+    "static/js/2.f93553e8.chunk.js": "/Texto_Menia/static/js/2.f93553e8.chunk.js",
+    "static/js/2.f93553e8.chunk.js.map": "/Texto_Menia/static/js/2.f93553e8.chunk.js.map",
+    "static/js/3.bf1ffd1d.chunk.js": "/Texto_Menia/static/js/3.bf1ffd1d.chunk.js",
+    "static/js/3.bf1ffd1d.chunk.js.map": "/Texto_Menia/static/js/3.bf1ffd1d.chunk.js.map",
+    "index.html": "/Texto_Menia/index.html",
+    "static/css/main.dd9b91a1.chunk.css.map": "/Texto_Menia/static/css/main.dd9b91a1.chunk.css.map",
+    "static/js/2.f93553e8.chunk.js.LICENSE.txt": "/Texto_Menia/static/js/2.f93553e8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cb41a06.js",
+    "static/js/2.f93553e8.chunk.js",
+    "static/css/main.dd9b91a1.chunk.css",
+    "static/js/main.1a84ed29.chunk.js"
+  ]
+}
