@@ -67,8 +67,12 @@ export default function Textform(props) {
                 flag = -1;
             }
         }
+        if(Text === ""){
+            setDecision("No Text Present")
+            props.AlertMessage("No Text Present, Enter Some Text To Search" , "warning")
+        }
         
-        if (flag === -1) {
+        else if (flag === -1) {
             setDecision("❌ The Word Is Not Present");
             props.AlertMessage("Word Not Present In The Text", "danger")
             
@@ -118,7 +122,7 @@ export default function Textform(props) {
                             
                             <button type="button" onClick={searchup} className={`btn btn-${props.mode === 'dark' ? 'success' : 'dark'} mx-2 ${searchtext === "" ? "disabled" : ""}`} >Search</button>
                         </form>
-                        <h5>{decision}</h5>
+                        <h5 style={{height:"20px"}}>{decision}</h5>
                     </div>
                 </div>
                 <hr />
