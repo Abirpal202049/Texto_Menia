@@ -1,11 +1,16 @@
 import React from 'react'
 
 function Alert(props) {
+    const caps = (word)=>{
+        const lower = word.toLowerCase();
+        return (lower.charAt(0).toUpperCase() + lower.slice(1))
+    }
+
+
     return (
-        <div>
-            <div className="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success! </strong>{props.text}
-            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        props.alert && <div>
+            <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+            <strong>{caps(props.alert.type)}: </strong>{props.alert.msg}
             </div>
         </div>
     )

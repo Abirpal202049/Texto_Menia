@@ -6,6 +6,7 @@ import './Transform.css';
 
 
 export default function Textform(props) {
+    document.title = "Texto_Menia - Home";
 
     // const [state, setState] = useState(initialState)
     const [Text, setText] = useState(''); // STATE VARIABLE
@@ -17,22 +18,27 @@ export default function Textform(props) {
         // console.log("Upper Case Is Clicked" + Text);
         let newtext = Text.toUpperCase();
         setText(newtext);
+        props.AlertMessage("Converted To Uppercase", "success")
     }
     const Clicktolowercase = ()=>{
         let newtext = Text.toLowerCase();
         setText(newtext);
+        props.AlertMessage("Converted To Lowercase", "success")
     }
     const Clicktoclear = ()=>{
         let newtext = '';
         setText(newtext);
+        props.AlertMessage("Text Has Been Cleared", "success")
     }
     const RandomText = ()=>{
         let randtext = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, adipisci quas explicabo optio exercitationem earum ea incidunt, voluptas vitae consectetur pariatur facere ullam nisi distinctio eaque sequi odio mollitia omnis. Recusandae, eum eius. Aliquam quae ipsa velit dolorem. At harum ipsa nostrum consequatur optio non esse, itaque pariatur excepturi assumenda molestias facere quisquam tempore iusto fugit placeat ut maiores cum voluptates ratione, saepe odio perspiciatis. Optio placeat qui blanditiis architecto necessitatibus quis enim iure impedit molestiae labore repellendus minus doloremque sequi dolor, nihil vitae eum facilis soluta voluptates autem officia. Nemo illo ipsum earum magni veniam voluptatibus debitis dicta quae.`
         setText(randtext);
+        props.AlertMessage("Generated Random Text", "success")
     }
     const RemoveSpace = ()=>{
         let ntext = Text.replace(/\s+/g, ' ').trim()
         setText(ntext);
+        props.AlertMessage("Removed Extra Spaces", "success")
     }
 
 
@@ -61,11 +67,15 @@ export default function Textform(props) {
                 flag = -1;
             }
         }
+        
         if (flag === -1) {
             setDecision("❌ The Word Is Not Present");
+            props.AlertMessage("Word Not Present In The Text", "danger")
+            
         }
         else{
             setDecision(`✅ The Word "${searchtext}" Is Present At Position ${flag + 1}`);
+            props.AlertMessage("Word Present In The Text", "success")
         }
 
     }
@@ -82,11 +92,11 @@ export default function Textform(props) {
                     <textarea className="form-control" id="text" rows="8" value={Text} onChange={handelonchangeClick} placeholder="Enter your text here ..."></textarea>
                 </div>
                 
-                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Clicktouppercase} >Convert To Uppercase</button>
-                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Clicktolowercase}>Convert To Lowercase</button>
-                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Clicktoclear}>Clear Text</button>
+                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1 ${Text === "" ? "disabled" : ""}`} onClick={Clicktouppercase} >Convert To Uppercase</button>
+                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1 ${Text === "" ? "disabled" : ""}`} onClick={Clicktolowercase}>Convert To Lowercase</button>
+                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1 ${Text === "" ? "disabled" : ""}`} onClick={Clicktoclear}>Clear Text</button>
                 <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={RandomText}>Generate Random Text</button>
-                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={RemoveSpace}>Remove Extra Space From Text</button>
+                <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1 ${Text === "" ? "disabled" : ""}`} onClick={RemoveSpace}>Remove Extra Space From Text</button>
                 {/* <button type="button" className={`btn btn-${props.mode === 'dark' ? 'primary' : 'dark'} mx-1 my-1`} onClick={Capitalize}>Convert To Camel Case</button> */}
                 <hr />
 

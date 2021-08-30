@@ -9,6 +9,8 @@ import pic4 from './gamedev.jpeg'
 
 
 export const Aboutus = (props) => {
+    document.title = "Texto_Menia - About Us";
+
     return (
         <div>
         <div className="container my-3">
