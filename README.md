@@ -1,70 +1,129 @@
+# Texto_Menia - Text Based Utility App
+It is an text based utility app
+#### Link :- [Texto_Menia](https://clone-a4dc8.web.app)
+
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### If you want to start with a new app
++ ##### `npx create-react-app my-app`
++ ##### `cd my-app`
++ ##### `npm start`
 
-## Available Scripts
+### If you want to run this app on your system
++ #### `npm install` [ For downloding the Node Module to your system ]
++ #### `npm start`     [ For Running the app on Local Host]
 
-In the project directory, you can run:
 
-### `npm start`
+# How To Deploy Your React App On Firebase
+### `npm install -g firebase-tools`
+Run this command to Install Firebase CLI (Command Line Tools) globally on your system and if you dont want to install globally on your system remove '-g' from the command
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `firebase login`
+Run this command to login to firebase in your Terminal 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+If you get any <span style="background-color: #ff0000">ERROR</span> as shown below 
 
-### `npm test`
+ ~~~~~~~~
+firebase : File C:\Users\Abir Pal\AppData\Roaming\npm\firebase.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/LinkID=135170.
+At line:1 char:1
++ firebase login
++ ~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+ ~~~~~~~~
+### `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+Run this command before to login to firebase successfully in your Terminal if you get the above error
+### `firebase init`
+Run this command to Initiate your project. 
+~~~~
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##      
+     ######    ##  ########  ######   ########  #########  ######  ######  
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##      
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
 
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Abir Pal\Desktop\REACT\textutils
+
+? Are you ready to proceed? Yes 
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: clone-a4dc8 (google-clone)
+i  Using project clone-a4dc8 (google-clone)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
++  Wrote build/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
++  Firebase initialization complete!
+~~~~
 ### `npm run build`
+Run the following command for Creating an optimized production build...
+~~~
+> textutils@0.1.0 build C:\Users\Abir Pal\Desktop\REACT\textutils
+> react-scripts build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Creating an optimized production build...
+Compiled successfully.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+File sizes after gzip:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  49.72 KB  build\static\js\2.a53ad94d.chunk.js
+  3.79 KB   build\static\js\main.68b12185.chunk.js
+  1.62 KB   build\static\js\3.75684c19.chunk.js
+  1.17 KB   build\static\js\runtime-main.adc6e6b9.js
+  434 B     build\static\css\main.dd9b91a1.chunk.css
 
-### `npm run eject`
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The build folder is ready to be deployed.
+You may serve it with a static server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  npm install -g serve
+  serve -s build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Find out more about deployment here:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  https://cra.link/deployment
 
-## Learn More
+~~~
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `firebase deploy`   or   `firebase deploy --only hosting`
+Just run the following command to deploy your app:
+~~~
+=== Deploying to 'clone-a4dc8'...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+i  deploying hosting
+i  hosting[clone-a4dc8]: beginning deploy...
+i  hosting[clone-a4dc8]: found 22 files in build
++  hosting[clone-a4dc8]: file upload complete
+i  hosting[clone-a4dc8]: finalizing version...
++  hosting[clone-a4dc8]: version finalized
+i  hosting[clone-a4dc8]: releasing new version...
++  hosting[clone-a4dc8]: release complete
 
-### Code Splitting
++  Deploy complete!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project Console: https://console.firebase.google.com/project/clone-a4dc8/overview
+Hosting URL: https://clone-a4dc8.web.app
+~~~
