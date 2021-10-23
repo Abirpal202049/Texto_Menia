@@ -9,6 +9,9 @@ It is an text based utility app
 + ##### `npx create-react-app my-app`
 + ##### `cd my-app`
 + ##### `npm start`
++ For invoking Mongo Doemon 
+
+      mongod
 
 ### If you want to run this app on your system
 + #### `npm install` [ For downloding the Node Module to your system ]
